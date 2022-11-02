@@ -124,6 +124,11 @@ body {
 .rotate-div {
 	height: 100%;
 	width: 100%;
+
+	transform: rotate(0deg);
+	transform-origin: bottom;
+
+	transition: all 500ms;
 }
 
 .rotate {
