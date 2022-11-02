@@ -1,4 +1,7 @@
 const deg = 6;
+
+const root = document.documentElement;
+
 const hour = document.querySelector(".hour");
 const min = document.querySelector(".min");
 const sec = document.querySelector(".sec");
@@ -11,31 +14,30 @@ const days = document.querySelector(".dayy");
 const months = document.querySelector(".month");
 const years = document.querySelector(".year");
 
-const dark = document.querySelector(".rotate-div");
-const root = document.documentElement;
+const rotate = document.querySelector(".rotate-div");
 const body = document.querySelector("body");
 
-dark.addEventListener("click", (e) => {
-	dark.classList.toggle("rotate");
+rotate.addEventListener("click", (e) => {
+	rotate.classList.toggle("rotate");
 	root.classList.toggle("dark");
 	body.classList.toggle("dark");
 });
 
 setInterval(() => {
-	let day = new Date();
-	let hh = day.getHours();
-	let mm = day.getMinutes();
-	let ss = day.getSeconds();
-	let ms = day.getMilliseconds();
+	const day = new Date();
+	const hh = day.getHours();
+	const mm = day.getMinutes();
+	const ss = day.getSeconds();
+	const ms = day.getMilliseconds();
 
-	let hhDeg = hh * 30;
-	let mmDeg = mm * deg;
-	let ssDeg = ss * deg;
-	let msDeg = ms / 166.6666667;
+	const hhDeg = hh * 30;
+	const mmDeg = mm * deg;
+	const ssDeg = ss * deg;
+	const msDeg = ms / 166.6666667;
 
-	let date = day.getDate();
-	let month = day.getMonth() + 1;
-	let year = day.getFullYear();
+	const date = day.getDate();
+	const month = day.getMonth() + 1;
+	const year = day.getFullYear();
 
 	hour.style.transform = `translate(-50%, -50%) rotateZ(${
 		hhDeg + mmDeg / 12
